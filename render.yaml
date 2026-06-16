@@ -1,0 +1,26 @@
+services:
+  # Backend Web Service
+  - type: web
+    name: shopez-backend
+    env: node
+    buildCommand: npm install --prefix backend
+    startCommand: npm start --prefix backend
+    envVars:
+      - key: PORT
+        value: 10000
+      - key: MONGO_URI
+        sync: false # Set this value in Render Dashboard (e.g. MongoDB Atlas connection string)
+      - key: JWT_SECRET
+        sync: false # Set this value in Render Dashboard (e.g. randomly generated secret)
+      - key: STOCK_API_KEY
+        value: placeholder_finnhub_or_alphavantage_key
+
+  # Frontend Static Web Service (Optional alternative to Vercel)
+  - type: web
+    name: shopez-frontend
+    env: static
+    buildCommand: npm install --prefix frontend && npm run build --prefix frontend
+    staticPublishPath: frontend/dist
+    envVars:
+      - key: VITE_API_URL
+        sync: false # Set to your backend URL e.g. https://shopez-backend.onrender.com/api

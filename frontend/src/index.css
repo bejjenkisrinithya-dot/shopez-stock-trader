@@ -1,0 +1,259 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --bg-color: #f8fafc;
+  --bg-surface: #ffffff;
+  --bg-surface-glass: rgba(255, 255, 255, 0.75);
+  --border-color: rgba(15, 23, 42, 0.06);
+  --text-primary: #1e293b;
+  --text-secondary: #475569;
+  --primary-glow: linear-gradient(135deg, #a78bfa 0%, #60a5fa 100%);
+  --success-color: #0d9488;
+  --danger-color: #e11d48;
+  --success-bg: rgba(16, 185, 129, 0.08);
+  --danger-bg: rgba(244, 63, 94, 0.08);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  min-height: 100vh;
+  overflow-x: hidden;
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(167, 139, 250, 0.05) 0%, transparent 40%),
+    radial-gradient(circle at 90% 80%, rgba(96, 165, 250, 0.05) 0%, transparent 40%);
+}
+
+h1, h2, h3, h4, h5, h6, .display-font {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+/* Custom Glassmorphism Card */
+.glass-card {
+  background: var(--bg-surface-glass);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.03), 0 4px 12px -2px rgba(0, 0, 0, 0.01);
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.glass-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(167, 139, 250, 0.2);
+  box-shadow: 0 12px 40px rgba(167, 139, 250, 0.08);
+}
+
+/* Glass Inputs */
+.glass-input {
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  color: var(--text-primary) !important;
+  padding: 12px 16px;
+  transition: all 0.25s ease;
+}
+
+.glass-input:focus {
+  background: #ffffff;
+  border-color: #a78bfa;
+  outline: none;
+  box-shadow: 0 0 12px rgba(167, 139, 250, 0.15);
+}
+
+.glass-input::placeholder {
+  color: var(--text-secondary);
+}
+
+.glass-input:disabled {
+  background: rgba(15, 23, 42, 0.04);
+  border-color: rgba(15, 23, 42, 0.02);
+  color: var(--text-secondary) !important;
+}
+
+/* Glass Navbar */
+.glass-navbar {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border-color);
+  position: sticky;
+  top: 0;
+  z-index: 1030;
+}
+
+/* Vibrant Badges & Buttons */
+.gradient-text {
+  background: var(--primary-glow);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-btn {
+  background: linear-gradient(135deg, #a78bfa 0%, #60a5fa 100%);
+  border: none;
+  color: white;
+  font-weight: 600;
+  border-radius: 10px;
+  padding: 12px 24px;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 15px rgba(96, 165, 250, 0.15);
+}
+
+.gradient-btn:hover {
+  opacity: 0.95;
+  transform: scale(1.02);
+  box-shadow: 0 6px 20px rgba(96, 165, 250, 0.25);
+  color: white;
+}
+
+.gradient-btn:active {
+  transform: scale(0.98);
+}
+
+/* Custom Table styling */
+.custom-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 10px;
+  color: var(--text-primary);
+}
+
+.custom-table th {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-secondary);
+  border: none;
+  padding: 12px 16px;
+}
+
+.custom-table tbody tr {
+  background: #ffffff;
+  border-radius: 12px;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.01);
+}
+
+.custom-table tbody tr:hover {
+  background: rgba(255, 255, 255, 0.85);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+}
+
+.custom-table td {
+  padding: 16px;
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.custom-table td:first-child {
+  border-left: 1px solid var(--border-color);
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+}
+
+.custom-table td:last-child {
+  border-right: 1px solid var(--border-color);
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
+/* Profit and Loss Styles */
+.stock-up {
+  color: var(--success-color) !important;
+}
+
+.stock-down {
+  color: var(--danger-color) !important;
+}
+
+.badge-up {
+  background-color: var(--success-bg);
+  color: var(--success-color) !important;
+  font-weight: 600;
+  border: 1px solid rgba(16, 185, 129, 0.15);
+}
+
+.badge-down {
+  background-color: var(--danger-bg);
+  color: var(--danger-color) !important;
+  font-weight: 600;
+  border: 1px solid rgba(244, 63, 94, 0.15);
+}
+
+/* Nav links styling */
+.nav-link-custom {
+  color: var(--text-secondary);
+  font-weight: 500;
+  transition: all 0.2s;
+  padding: 8px 16px;
+  border-radius: 8px;
+}
+
+.nav-link-custom:hover, .nav-link-custom.active {
+  color: var(--text-primary);
+  background: rgba(15, 23, 42, 0.04);
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(15, 23, 42, 0.1);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(15, 23, 42, 0.2);
+}
+
+/* Trading form elements */
+.trade-tab {
+  cursor: pointer;
+  padding: 10px;
+  font-weight: 600;
+  text-align: center;
+  border-radius: 8px;
+  transition: all 0.2s;
+}
+
+.trade-tab-buy.active {
+  background-color: var(--success-bg);
+  color: var(--success-color);
+}
+
+.trade-tab-sell.active {
+  background-color: var(--danger-bg);
+  color: var(--danger-color);
+}
+
+/* Stock Card in List */
+.stock-list-item {
+  border-bottom: 1px solid var(--border-color);
+  padding: 16px 12px;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.stock-list-item:hover {
+  background: rgba(15, 23, 42, 0.02);
+}
+
+.stock-list-item:last-child {
+  border-bottom: none;
+}

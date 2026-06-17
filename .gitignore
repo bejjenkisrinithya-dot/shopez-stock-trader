@@ -19,3 +19,6 @@ shopez_temp_zip/
 # System files
 .DS_Store
 Thumbs.db
+
+# Documentation source files (only PDFs are pushed)
+docs/*.md

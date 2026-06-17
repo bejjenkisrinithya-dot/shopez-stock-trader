@@ -23,3 +23,4 @@ Thumbs.db
 # Documentation source files (only PDFs are pushed)
 docs/*.md
 fsd/*.md
+upload_to_google_drive/

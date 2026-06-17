@@ -22,3 +22,4 @@ Thumbs.db
 
 # Documentation source files (only PDFs are pushed)
 docs/*.md
+fsd/*.md
